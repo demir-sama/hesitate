@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme {
+  --color-coal: #0c0c0e; --color-coal2: #141417; --color-edge: #26262c; --color-bone: #f1ede4; --color-dim: #8d8a83;
+  --color-wire: #ff5b2e; --color-mint: #3dffb5; --color-hold: #ffc845; --color-cut: #ff3b5c; --color-sky: #7cc4ff;
+  --font-sans: var(--f-sans); --font-mono: var(--f-mono); --font-serif: var(--f-serif);
+}
+html { background: var(--color-coal); color: var(--color-bone); }
+body { font-family: var(--font-sans); min-height: 100vh;
+  background-image: linear-gradient(#ffffff06 1px, transparent 1px), linear-gradient(90deg, #ffffff06 1px, transparent 1px);
+  background-size: 48px 48px; }
+.panel { background: color-mix(in oklab, var(--color-coal2) 92%, transparent); border: 1px solid var(--color-edge); border-radius: 18px; backdrop-filter: blur(6px); }
+.lbl { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .16em; color: var(--color-dim); }
+.pill { font-family: var(--font-mono); font-size: 11px; border: 1px solid var(--color-edge); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+::selection { background: var(--color-wire); color: var(--color-coal); }
+@keyframes scan { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+.scan::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, #ff5b2e33, transparent); animation: scan 1.6s linear infinite; }
